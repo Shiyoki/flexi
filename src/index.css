@@ -1,13 +1,144 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/* ./src/index.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*{
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  font-family: 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+img{
+  max-width: 100%;
+}
+
+.full{
+  height: 100vh;
+}
+
+/*---------- NAVBAR SECTION ----------*/
+.navbar-nav{
+  width: 100%;
+  @apply flex justify-start px-12;
+}
+
+.navbar-brand-container{
+  width: 8rem;
+}
+
+@media (min-width: 360px){
+  .navbar-nav{
+    @apply flex justify-start px-5;
+  }
+
+  .navbar-brand-container{
+    width: 6rem;
+  }
+}
+
+/*---------- HERO SECTION ----------*/
+.hero-parent{
+  background-image: url("../src/assets/images/heading-banner.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.hero-container{
+  @apply bg-black bg-opacity-70 px-12;
+}
+
+.hero-title{
+  @apply mb-5;
+}
+
+.hero-button-container{
+  @apply bg-primary-focus text-white text-lg p-10 shadow-xl;
+  width: 16rem;
+  clip-path: polygon(0 20%, 100% 0, 100% 80%, 0% 100%);
+}
+
+/*.hero-btn{
+  @apply border-white text-white text-lg font-semibold border rounded-lg px-4 py-2;
+}*/
+
+@media (min-width: 360px){
+  .hero-container{
+    @apply p-5 mx-auto;
+  }
+
+  .hero-btn{
+    width: 8rem;
+  }
+
+  .hero-right-content{
+    @apply my-5;
+  }
+}
+
+@media (min-width: 768px){
+  .hero-container{
+    @apply px-10 flex flex-row justify-between gap-2;
+  }
+
+  .hero-left-content{
+    @apply self-center;
+  }
+
+
+}
+
+@media (min-width: 1024px){
+  .hero-container{
+    @apply flex flex-row justify-evenly gap-3;
+  }
+
+  .hero-button-container{
+    width: 20rem;
+  }
+}
+
+
+/*---------- FORM SECTION ----------*/
+.form-title{
+  @apply text-black font-medium text-lg text-center pt-3;
+}
+
+.input-group{
+  @apply flex justify-between space-x-2;
+}
+
+/*---------- CONTENT SECTION ----------*/
+
+.content-left{
+  @apply flex justify-center;
+}
+
+@media (min-width: 360px){
+  .content-wrapper{
+    @apply p-5 space-y-5;
+  }
+}
+
+@media (min-width: 768px){
+  .content-wrapper{
+    @apply px-10 flex flex-row justify-between gap-2;
+  }
+}
+
+@media (min-width: 1024px){
+  .content-wrapper{
+    @apply gap-5;
+  }
+}
+
+/*---------- FOOTER SECTION ----------*/
+.footer{
+  font-size: 0.75rem;
+  @apply py-3 px-8 mt-5 bg-error;
+  @apply flex justify-center;
+  width: 100%;
 }
